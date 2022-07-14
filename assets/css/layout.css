@@ -96,6 +96,6 @@ footer {
     }
 
     .content {
-        padding: 15px;
+        padding: Calc(10% / 2);
     }
 }
