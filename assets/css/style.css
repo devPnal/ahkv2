@@ -14,4 +14,18 @@ a {
 
 .content p {
     margin-bottom: 36px;
+    line-height: 1.6;
+    word-break: keep-all;
+}
+
+.content .info {
+    background-color: #e3e6fc;
+    padding: 1px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px #ccc;
+    margin-bottom: 60px;
+}
+
+.content .info p {
+    margin-bottom: 20px;
 }

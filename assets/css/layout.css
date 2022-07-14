@@ -75,6 +75,33 @@ article {
     padding: 10px;
 }
 
+.content .paging {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0px 0px 0px;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+.content .paging li{
+    padding: 5px 15px;
+    display: inline-block;
+    list-style: none;
+}
+
+.content .paging a:first-child, .content .paging a:last-child{
+    background-color: #667766;
+    border-radius: 6px;
+    box-shadow: 3px 3px 5px #eee;
+    color: white;
+    font-weight: bold;
+}
+
+.content .paging a:first-child:hover, .content .paging a:last-child:hover{
+    text-decoration: underline;
+    background-color: #556655;
+}
+
 footer {
     max-width: 780px;
     margin: 0 auto;
@@ -96,6 +123,6 @@ footer {
     }
 
     .content {
-        padding: Calc(10% / 2);
+        padding: 10px Calc(10% / 2);
     }
 }
