@@ -1,0 +1,82 @@
+.burger-icon {
+	cursor: pointer;
+	display: inline-block;
+	position: fixed;
+	padding: 19px 15px;
+	top: 23px;
+	left: 30px;
+	user-select: none;
+	width: auto;
+	margin: 0;
+	transition: all .5s ease;
+}
+  
+.burger-icon .burger-sticks {
+	background: #333;
+	display: block;
+	height: 2px;
+	position: relative;
+	transition: all .2s ease-out;
+	width: 18px;
+	z-index: 3;
+}
+  
+.burger-icon .burger-sticks:before,
+.burger-icon .burger-sticks:after {
+	background: #333;
+	content: '';
+	display: block;
+	height: 100%;
+	position: absolute;
+	transition: all .2s ease-out;
+	width: 100%;
+}
+  
+.burger-icon .burger-sticks:before {
+	top: 5px;
+}
+
+.burger-icon .burger-sticks:after {
+	top: -5px;
+}
+
+.burger-check {
+	display: none;
+}
+
+.burger-check:checked~ nav {
+	left: 0px; 
+}
+
+.burger-check:checked~ .burger-icon {
+	left: 310px; 
+}
+
+.burger-check:checked~.burger-icon .burger-sticks {
+	background: transparent;
+}
+
+.burger-check:checked~.burger-icon .burger-sticks:before {
+	transform: rotate(-45deg);
+}
+
+.burger-check:checked~.burger-icon .burger-sticks:after {
+	transform: rotate(45deg);
+}
+
+.burger-check:checked~.burger-icon:not(.steps) .burger-sticks:before,
+.burger-check:checked~.burger-icon:not(.steps) .burger-sticks:after {
+	top: 0;
+}
+
+@media screen and (max-width: 1023px) {
+	.burger-icon {
+		top: 0px;
+		left: 0px;
+		z-index: 1;
+	}
+
+	.burger-check:checked~ .burger-icon {
+		left: 280px; 
+	}
+}
