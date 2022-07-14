@@ -17,12 +17,49 @@ header {
 nav {
     position: fixed;
     top: 0px;
-    left: -250px;
+    left: -285px;
     background-color: #eee;
-    width: 250px;
+    width: 280px;
     height: 100%;
     float: left;
     transition: all .5s ease;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #555 #eee;
+    box-shadow: 2px 0px 5px #ccc;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+nav .nav-part {
+    border-top: 1px solid black;
+}
+
+nav ul li {
+    display: block;
+    text-indent: 20px;
+    line-height: 40px;
+    font-size: 14px;
+}
+
+nav ul li:not(.nav-chapter):hover{
+    text-decoration: underline;
+}
+
+nav ul .nav-title {
+    text-align: center;
+    background-color: #ccc;
+    line-height: 45px;
+    text-indent: 0px;
+}
+
+nav ul .nav-chapter {
+    font-weight: bold;
 }
 
 article {
@@ -42,4 +79,22 @@ footer {
     margin: 0 auto;
     padding: 20px;
     font-size: 12px;
+}
+
+@media screen and (max-width: 1023px) {
+	header {
+        display: block;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        padding: 6px 0px;
+        width: 100%;
+        text-align: center;
+        background-color: white;
+        box-shadow: 3px 0px 5px #ccc;
+    }
+
+    .content {
+        padding: 15px;
+    }
 }
