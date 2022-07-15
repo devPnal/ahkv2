@@ -109,6 +109,12 @@ footer {
     font-size: 12px;
 }
 
+@media screen and (max-width: 1400px) {
+	header {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 1023px) {
 	header {
         display: block;
@@ -125,4 +131,23 @@ footer {
     .content {
         padding: 10px Calc(10% / 2);
     }
+}
+
+@media screen and (max-width: 550px) {
+	.content .paging {
+        display: block;
+    }
+    
+    .content .paging li {
+        display: block;
+    }
+    
+    .content .paging li:first-child, .content .paging a:last-child{
+        background-color: #667766;
+        border-radius: 6px;
+        box-shadow: 3px 3px 5px #eee;
+        color: white;
+        font-weight: bold;
+    }
+    
 }
