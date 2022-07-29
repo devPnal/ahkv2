@@ -1,0 +1,72 @@
+.code-error { 
+    background-color: #FFD0D0;
+    color: #800000;
+}
+
+.code-comment-line {
+    font-style: italic;
+    color: #008000;
+}
+
+.code-comment-block {
+    font-style: italic;
+    color: #305030;
+}
+
+.code-hash {
+    font-weight: bold;
+    color: #F04020;
+}
+
+.code-label {
+    font-weight: bold;
+    color: #202020;
+}
+
+.code-flow {
+    font-weight: bold;
+    color: #6F008A;
+}
+
+.code-number {
+    color: #305080;
+}
+
+.code-string {
+    color: #A03030;
+}
+
+.code-escape {
+    font-weight: bold;
+    color: #FF8000;
+}
+
+.code-operator {
+    color: #206020;
+}
+
+.code-reserved {
+    color: #0000FF;
+}
+
+.code-known-var {
+    color: #C000C0;
+}
+
+.code-known-func {
+    font-weight: bold;
+    color: #004080;
+}
+
+.code-known-class {
+    font-weight: bold;
+    color: #107080;
+}
+
+.code-known-obj-prop {
+    color: #D040D0;
+}
+
+.code-known-obj-method {
+    color: #2060D0;
+}

@@ -141,106 +141,137 @@
                         만약 현시점에서 대중적인 '오토핫키 v1.1'의 강좌를 찾으신다면 프날 오토핫키 강좌(<a href="https://pnal.kr">https://pnal.kr</a>)를 봐주시길 바랍니다.
                         </p>
                     </div>
-                    <h1>4. 오토핫키 구문을 분석하는 방법</h1>
+                    <h1>6. 문자를 출력하는 MsgBox (상)</h1>
                     <hr>
-                    <p>드디어 오토핫키를 공부해봅시다. 이번 강에서는 오토핫키 스크립트를 어떻게 분석하면 좋을지 알아보겠습니다.</p>
-                    <h2>위에서 아래로 읽는 스크립트</h2>
-                    <p>오토핫키 코드는 기본적으로 위에서 아래로 한줄씩 <b>순차적</b>으로 수행됩니다. 예를 들어서 아래와 같은 코드가 있다고 해볼까요?
-                    </p>
-                    <codebox><code><table>
-<tr><td>1</td><td>MsgBox("Hello")</td></tr>
-<tr><td>2</td><td>WinActivate("ahk_exe notepad.exe")</td></tr>
-<tr><td>3</td><td>Send("Hello")</td></tr>
-                    </table></code></codebox>
-                    <p>우리는 아직 오토핫키를 배우지 않았기 때문에 위 구문이 정확히 어떤 역할을 하는지 모릅니다.
-                    그러나 오토핫키 코드는 위에서 아래로 실행된다고 했으므로, 1번줄, 2번줄, 3번줄 순서로 진행됨을 알 수 있습니다.
-                    </p>
-                    <h2>줄 구분은 반드시 지켜야합니다</h2>
-                    <p>오토핫키는 한 줄씩 읽어들이며 수행되는 인터프리트 언어이기 때문에, 한 줄에 여러 명령을 욱여넣는 것은 특별한 경우가 아닌 한 허용되지 않습니다.
-                    대부분의 상황에서, 반드시 한 줄엔 하나의 명령만이 존재해야합니다.
-                    </p>
-                    <p>그와 달리 띄어쓰기(공백)와 대소문자 혼용은 대부분의 상황에서 자유롭게 해도 됩니다.
-                        한 칸 띄울거라면 두 칸 띄워도 되며, MsgBox라는 함수를 msgBOX라고 대소문자를 바꿔 써도 잘 작동할 것입니다.
-                        그러나 임의로 코딩 스타일을 흐트리는 것은 좋지 못하며, 이왕이면 표준적인 용례를 따르는 것이 좋습니다.
-                    </p>
-                    <h2>오토핫키는 함수를 이용하여 명령을 내립니다</h2>
-                    <p>오토핫키에서 명령은 <b>함수</b>를 호출하는 것으로 구현됩니다.
-                        함수라는 말이 어렵지만, 일단은 일종의 명령어라고 이해하시면 됩니다.
-                        호출하는 함수마다 다른 기능을 한다는 것이지요.
-                        만약 로봇 강아지를 프로그래밍 한다면, '짖기', '먹기', '자기'와 같은 함수를 호출하여 각각의 기능을 수행할 수 있습니다.
-
-                    </p>
-                    <p>오토핫키에서 함수를 호출하는 한 줄은 <b>함수명</b>과 <b>인자</b>로 나뉘어져있습니다.
-                    </p>
-                    <codebox><code><table>
-<tr><td>1</td><td>AAAA(BBBB, CCCC, DDDD)</td></tr>
-                    </table></code></codebox>
-                    <p>예를 들어서 위와 같은 줄이 있다면, <u>AAAA는 함수명이며 BBBB, CCCC, DDDD는 인자입니다.</u> 함수명은 반드시 한 개여야하며, 인자는 여러 개가 올 수 있습니다.
-                    인자는 해당하는 함수를 어떻게 동작시킬지를 결정합니다. 예를 들어서 로봇 강아지의 '짖기'가 다 똑같은 짖기가 아닐 것입니다.
-                        높게 짖을수도, 낮게 짖을수도, 으르렁댈수도 있지요. 두 번 짖을수도 있고요. 이는 인자를 어떻게 적어주냐에 따라 조절할 수 있습니다.
-                    </p>
-                    <codebox><code><table>
-<tr><td style="vertical-align:middle;">1</td><td>짖기("낮게", 2)</td></tr>
-                    </table></code></codebox>
-                    <p>예를 들어 이런식으로 적으면 로봇 강아지를 낮게 두 번 짖게 할 수 있습니다. 물론 <code>짖기()</code>함수는 오토핫키에 존재하지 않습니다.</p>
-                    <h2>함수의 원형</h2>
-                    <p>그리고 해당 함수를 이용할 때 어떤 인자를 제공해야하는지 <u>알아보기 쉽게 적은 것</u>이 바로 <b>함수의 원형</b>입니다.
-                        원형에서 어떤 인자를 적어야하는지 표현한 것을 <b>매개변수</b>라고 하고요.
-                    </p>
-                    <p>예를 들어서, 오토핫키에 <code>CookRamyeon</code>이라는 컴퓨터에게 라면을 끓이라는 지시를 내릴 수 있는 함수가 있다고 가정하고,
-                        <code>CookRamyeon</code>의 '함수의 원형’이 아래와 같다고 해봅시다.
-                    </p>
-                    
-                    <pre><code>CookRamyeon(라면의 종류, 물의 양, 조리 시간[, 스프의 양])</code></pre>
-                    <p>'라면의 종류', '물의 양', '조리 시간', '스프의 양'은 매개변수입니다.
-                     <u>여러분들은 이 '함수의 원형’의 매개변수를 보고, 아래처럼 인자를 넣어 명령줄을 작성해주시면 됩니다.</u>
-                    </p>
-                    
-                    <codebox><code><table>
-<tr><td>1</td><td>CookRamyeon("Jin", 500, 5)</td></tr>
-                    </table></code></codebox>
-                    <p>컴퓨터에게 Jin 이라는 라면을 500ml의 물의 양으로 5분간 끓이라는 명령이 완성되었습니다.
-                        그런데, ‘스프의 양’은 지정해주지 않았네요. 왜냐하면 스프의 양은 <b>선택 매개변수</b>이기 때문입니다.
-                        선택 매개변수란 작성하지 않아도 문제가 없는 매개변수를 뜻합니다.
-                        선택 매개변수를 작성하지 않으면 미리 함수에 설정되어있는 기본값으로 실행됩니다.
-                        그러므로 선택 매개변수는 생략해도 오류가 나지 않죠.
+                    <p>
+                        이제 드디어 소스코드를 작성해봅시다. 첫번째로 배울 함수는 화면에 문자를 출력해주는 함수인 <code>MsgBox</code>입니다.
                     </p>
                     <p>
-                        어떠한 매개변수가 선택 매개변수인지는 함수의 원형을 보면 알 수 있습니다. 
-                        함수의 원형에서 대괄호로 묶여 있는 부분은 선택 매개변수라는 뜻입니다. 위의 <code>CookRamyeon</code> 함수의 원형에서 <code>[, 스프의 양]</code>이라고 대괄호 처리가 되어있죠?
+                        우선 지난 강을 참고하시어 스크립트를 편집할 수 있도록 에디터 화면을 연 채로 시작해보겠습니다.
                     </p>
-                    <p>오토핫키에서 함수의 원형은 함수에 어떤 값을 인자로 전달해주어야하는지 알아보기 쉽게 적은 힌트에 불과합니다.
-                        따라서 여러분은 함수의 원형을 보고, 인자가 몇 개 필요한 함수인지, 또 어떤 인자가 필요한지 정도만 파악할 줄 알면 OK입니다.
+                        <img src="/assets/image/6/1.png">
+                        <span class="desc">사진 1. 빈 에디터를 연 모습</span>
+                    <h2>MsgBox</h2>
+                    <p>
+                        <code>MsgBox</code>는 알림상자로 화면에 문자를 출력해주는 함수입니다. 이를 이용해서 사용자에게 알림이나 경고 등을 표시할 수 있습니다.
+                        간단하지만 자주 사용됩니다. 먼저 <code>MsgBox</code> 함수의 <b>원형</b>은 아래와 같습니다.
                     </p>
-                    <div class="study">
-                        <h3>정리: 함수의 원형</h3>
-                        <p>
-                        정리해보겠습니다. <b>함수의 원형</b>은 하나의 함수를 어떻게 입력해야 하는 지에 대한 내용이 담겨있습니다.
-                        이 함수의 원형만 잘 읽어도 해당 함수를 사용하는 데 문제가 되지 않습니다.</p>
-                        <p>
-                        제일 앞에 오는 단어가 <b>함수명</b>, 괄호 안에 있는 단어는 <b>매개변수</b> 이며,
-                        매개변수 위치에 어떤 인자를 적어주냐에 따라 따라서 컴퓨터에게 이 명령을 어떤 방법으로 내릴 것인지가 정해집니다.
-                        함수의 원형에서 선택 매개변수는 대괄호에 묶여 있습니다.
-                        </p>
-                    </div>
+                    <pre><code><b>MsgBox</b>([Text, Title, Options])</code></pre>
+                    <span class="desc">MsgBox 함수의 원형</span>
+
+                    <p>
+                        <a href="/4">4강</a>에서 말씀드렸던 내용 기억하시나요? 함수의 원형에서 대괄호로 표시된 매개변수는 <b>선택 매개변수</b>라고 했습니다.
+                        입력하지 않아도 오류가 나지 않고 실행된다는 뜻이지요.
+                    </p>
+                    <p>
+                        <code>MsgBox</code>는 모든 매개변수가 선택 매개변수네요. 시험삼아서 빈 에디터 창에 <u>인자를 모두 생략한 후</u> <code>MsgBox</code> 함수를 호출해보겠습니다.
+                        이제 빈 에디터에 직접 코드를 타이핑해보시면 됩니다.
+                    </p>
+<codebox><code><table>
+<tr><td>1</td><td><span class="code-known-func">MsgBox</span><span class="code-operator">()</span></td></tr>
+</table></code></codebox>
+                    <span class="desc">예제 1. 인자가 모두 생략된 MsgBox</span>
+                    <p>
+                        SciTE4AutoHotkey에 입력하면 아래와 같습니다.
+                    </p>
+                    <img src="/assets/image/6/2.png" width="145">
+                    <span class="desc">사진 2. 에디터에 입력된 모습</span>
+                    <p>
+                        이제 여러분이 입력한 코드를 실행해보겠습니다.
+                        편집중인 스크립트를 실행해보고자 한다면, SciTE4AutoHotkey 상단 도구모음에서
+                        실행(<span style="color: #7aaddd">▶</span>) 버튼을 누르거나 키보드의 <code>F5</code>키를 누르면 됩니다.
+                        한 번 눌러보세요.
+                    </p>
+                    <img src="/assets/image/6/3.png" width="181">
+                    <span class="desc">사진 3. 실행된 알림상자의 모습</span>
+                        
+                    <p>
+                        정말이네요! 오류 없이 알림상자가 나타났습니다. 적어준 인자가 없기 때문에 기본 문구인 "Press OK to continue"가 나타났지만요.
+                    </p>
+                    <p>
+                        표시되는 문구를 수정해봅시다. 바다 건너 외국인들은 프로그래밍 언어를 처음 배울때 <code>Hello, world!</code>라는 문구를 출력해보는 전통 아닌 전통이 있습니다.
+                        우리도 한 번 따라해보죠. 알림상자에 <code>Hello, world!</code>를 출력하려면 어떻게 해야할까요?
+                    </p>
+                    <pre><code><b>MsgBox</b>([Text, Title, Options])</code></pre>
+                    <span class="desc">Text 매개변수만 사용하고자 합니다.</span>
+                    <p>
+                        알림상자의 문구는 Text 매개변수로 지정할 수 있습니다.
+                        그렇다면 Title과 Options 매개변수를 생략하고,
+                        Text 매개변수의 위치에 아래와 같이 적어주면 되겠군요! 실행해볼까요?
+                    </p>
+<codebox><code><table>
+<tr><td>1</td><td><span class="code-known-func">MsgBox</span><span class="code-operator">(</span><span class="code-string">"Hello, World!"</span><span class="code-operator">)</span></td></tr>
+</table></code></codebox>
+                    <span class="desc">예제 2. Text 매개변수에 "Hello, world!"를 입력</span>
+                    <img src="/assets/image/6/4.png" width="181">
+                    <span class="desc">사진 4. 실행된 알림상자의 모습</span>
+                    <p>
+                        알림 문구가 <code>Hello, world!</code>로 바뀌었습니다. 여기서 한 가지 짚고 넘어가보자면,
+                        이와같이 함수의 인자로 문구를 전달할 땐 이를 따옴표로 감싸주어야합니다.
+                        따옴표는 큰 따옴표(")와 작은 따옴표(') 모두를 사용할 수 있으나, 여는 따옴표와 닫는 따옴표는 통일시켜야 합니다.
+                    </p>
+                    <p>
+                        따라서 아래 소스코드는 작은 따옴표를 사용했음에도 <code>예제 2</code>와 완전히 동일한 결과를 갖습니다.
+                    </p>
+                    
+<codebox><code><table>
+<tr><td>1</td><td><span class="code-known-func">MsgBox</span><span class="code-operator">(</span><span class="code-string">'Hello, World!'</span><span class="code-operator">)</span></td></tr>
+</table></code></codebox>
+                    <span class="desc">예제 3. Text 매개변수에 'Hello, world!'를 입력</span>
                     <div class="info">
-                        <h3>Tip: 인자와 매개변수의 차이</h3>
+                        <h3>Tip: 문자열이란?</h3>
+                        <p>프로그래밍에서 <b>문자열</b>이란 문자의 집합을 의미합니다.
+                            보통 <code>a</code>, <code>b</code>, <code>가</code>, <code>나</code>와 같은 한 글자를 <b>문자</b>라고 하죠?<br>
+                            문자열은 그러한 문자들이 모여 만든 단어나 문장 등을 뜻합니다.<br><br>
+                            아래처럼 특별한 기능을 하지 않는 일반적인 단어나 문장, 혹은 단일문자가 이에 포함됩니다.<br>
+                        <code>apple</code>, <code>가방</code>, <code>날마다 날마다 늘어간 기약과 더하던 후회다.</code>,<code>a</code>, <code>abc123</code><br><br>
+                        <code>예제 2</code>와 <code>예제 3</code>에서 사용한 <code>Hello, world!</code> 또한 문자열이죠. 앞으로는 강좌에서 '문구', '문장', '단어'와 같은 용어 대신 <b>문자열</b>이란 용어를 자주 사용하겠습니다.</p>
+                    </div>
+                        
+
+                    <h2>여러 줄 사용해보기</h2>
+                    <p><a href="/4">4강</a>에서 말씀드렸던 것 기억하나요? 오토핫키는 구문을 위에서 아래로 실행시킵니다. 그렇다면 MsgBox도 여러번 써볼까요?</p>
+<codebox><code><table style="vertical-align: middle">
+<tr><td>1</td><td><span class="code-known-func">MsgBox</span><span class="code-operator">(</span><span class="code-string">"제 이름은 홍길동입니다."</span><span class="code-operator">)</span></td></tr>
+<tr><td>2</td><td><span class="code-known-func">MsgBox</span><span class="code-operator">(</span><span class="code-string">"나이는 30살입니다"</span><span class="code-operator">)</span></td></tr>
+<tr><td>3</td><td><span class="code-known-func">MsgBox</span><span class="code-operator">(</span><span class="code-string">"오토핫키를 배우고 있습니다."</span><span class="code-operator">)</span></td></tr>
+</table></code></codebox>
+
+                    <span class="desc">예제 4. 여러줄의 소스코드 입력</span>
+                    <div class="grid-image">
+                        <img src="/assets/image/6/5.png" width="181">
+                        <img src="/assets/image/6/6.png" width="181">
+                        <img src="/assets/image/6/7.png" width="181">
+                    </div>
+                    <span class="desc">사진 5~7. 실행 결과('확인'을 누를때마다 각각의 알림상자가 팝업됨)</span>
+                    <p>
+                        직접 코드를 실행해보세요. 첫 번째 알림상자가 나타난 후, <code>확인</code> 버튼을 누르면 그 다음 알림상자가 나타납니다.
+                        여기서 우리는 두 가지 깨달음을 얻을 수 있는데요, 하나는 이미 알고있던대로 <u>'소스코드는 위에서 아래로 실행된다'</u>라는 것이고,
+                        다른 하나는 <u>'동작이 완료되기 전엔 다음 줄로 진행되지 않는다'</u>입니다.
+                    </p>
+                    <p>
+                        <code>예제 4</code>에서 첫 번째 알림상자를 닫기 전까진 두 번째 알림상자가 나타나지 않았습니다.
+                        오토핫키는 이전 동작을 완료하기 전까지 다음 줄로 넘어가지 않는 특징을 갖고 있기 때문입니다.
+                    </p>
+
+                    <p>
+                        간단한 알림상자로 원하는 문구를 출력해보기도 하고 오토핫키의 특징을 두 가지나 알아보기도 했는데요,
+                        강좌의 분량이 길어지니 MsgBox의 Title과 Options 매개변수에 대한 설명은 다음 강에서 이어 하도록 하겠습니다.
+                    </p>
+                    
+                    <div class="study">
+                        <h3>정리: MsgBox 함수</h3>
                         <p>
-                        - <b>인자</b>: 함수를 어떻게 동작하는지 결정하기 위해 호출할때 함께 전달해주는 값<br>
-                        - <b>매개변수</b>: 함수의 원형에서, 어떤 인자를 넣어야하는지 표시해주는 이름.<br><br>
-                        예를 들어서, 위의 <code>CookRamyeon</code> 예시에서 "물의 양"은 <b>매개변수</b>, "500"은 함수에게 전달해준 <b>인자</b>라고 생각하시면 됩니다.
-                        함수의 원형은 제가 여러분께 알려드리는 용도이므로, 실제 코드 작성시엔 인자만 작성하게 되겠죠?<br><br>
-                        엄밀히 말하면 매개변수는 '함수 안에서 사용되는 호출시 전달받은 값'을 나타내지만,
-                        이를 이해하려면 40강부터 시작되는 함수 강좌를 참고해야하므로 아직은 <u>"어떤 인자를 넣어야하는지 표시해주는 힌트"</u>정도로만 이해하시길 바랍니다.
+                            역할: 화면에 알림상자를 표시한다<br>
+                            원형: <span style="margin-top: 0px; display: inline-block;"><code><b>MsgBox</b>([Text, Title, Options])</code></span><br>
+                            Text 매개변수만 쓴 예시: <span style="margin-top: 0px; display: inline-block;"><code><b>MsgBox</b>("텍스트")</code></span> <i>← 문자열엔 따옴표를 꼭 표시할 것!</i>
                         </p>
                     </div>
-                    <p>다음 강부턴 드디어! 오토핫키 스크립트를 제작해보겠습니다. 좀 어려웠죠? 이번 강에서는 함수니 매개변수니 인자니, 어려운 말만 가득 나와서 말이지요.
-                        장담컨데 다음 강부터는 훨씬 쉽고, 템포도 느려질 것입니다.
-                    </p>
+
                     <ul class="paging">
-                        <a href="/3"><li>&#xE000; 3. 오토핫키 프로그래밍 준비하기</li></a>
-                        <li>4. 오토핫키 구문을 분석하는 방법</li>
-                        <a href="/5"><li>5. 오토핫키 스크립트 만들기 &#xE001;</li></a>
+                        <a href="/5"><li>&#xE000; 5. 오토핫키 스크립트 만들기</li></a>
+                        <li>6. 문자를 출력하는 MsgBox (상)</li>
+                        <a href="/7"><li>7. 문자를 출력하는 MsgBox (하) &#xE001;</li></a>
                     </ul>
                 </div>
             </article>
