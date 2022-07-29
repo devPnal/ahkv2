@@ -1,5 +1,16 @@
-@import url("/assets/css/menubar.css");
-@import url("/assets/css/style.css");
+
+@import "/assets/css/menubar.css";
+@import "/assets/css/style.css";
+@font-face {
+    font-family: 'Spoqa Han Sans Neo';
+    font-weight: 400;
+    src:url('/assets/font/SpoqaHanSansNeo-Regular.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Spoqa Han Sans Neo';
+    font-weight: 700;
+    src:url('/assets/font/SpoqaHanSansNeo-Bold.woff2') format('woff2');
+}
 
 html, body {
     margin: 0;
@@ -13,6 +24,7 @@ header {
     left: 80px;
     display: inline;
     user-select: none;
+    z-index: 1;
 }
 
 nav {
@@ -29,6 +41,7 @@ nav {
     scrollbar-width: thin;
     scrollbar-color: #555 #eee;
     box-shadow: 2px 0px 5px #ccc;
+	z-index: 2;
 }
 
 nav ul {
@@ -133,7 +146,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 870px) {
 	.content .paging {
         display: block;
     }

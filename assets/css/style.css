@@ -1,3 +1,5 @@
+@import "/assets/css/codeset.css";
+
 html, body {
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
@@ -7,12 +9,21 @@ h1 {
     margin-bottom: 36px;
 }
 
+h2 {
+    margin-top: 60px;
+}
+
+.semititle {
+    margin-top: 60px;
+}
+
 a {
     color: black;
     text-decoration: none;
 }
 
 .content p {
+    margin-top: 36px;
     margin-bottom: 36px;
     line-height: 1.6;
     word-break: keep-all;
@@ -23,7 +34,7 @@ a {
     padding: 1px 20px;
     border-radius: 5px;
     box-shadow: 0px 0px 8px #ccc;
-    margin-bottom: 60px;
+    margin-top: 60px;
 }
 
 .content .warn {
@@ -31,7 +42,7 @@ a {
     padding: 1px 20px;
     border-radius: 5px;
     box-shadow: 0px 0px 8px #ccc;
-    margin-bottom: 60px;
+    margin-top: 60px;
 }
 
 .content .study {
@@ -39,7 +50,7 @@ a {
     padding: 1px 20px;
     border-radius: 5px;
     box-shadow: 0px 0px 8px #ccc;
-    margin-bottom: 60px;
+    margin-top: 60px;
 }
 
 .content .info p, .content .warn p, .content .study p{
@@ -57,11 +68,14 @@ a {
 .content .grid-image {
     display: flex;
     justify-content: center;
+    margin: auto 0px;
     width: 100%;
 }
 
 .content .grid-image img {
     max-width: 50%;
+    margin: 0px;
+    text-align: center;
 }
 
 .content img {
@@ -74,7 +88,9 @@ a {
     display: block;
     text-align: center;
     margin-top: 10px;
+    margin-bottom: 30px;
     font-size: smaller;
+    color: #000;
 }
 
 .content code {
@@ -96,10 +112,10 @@ a {
 .content codebox code {
     display: block;
     padding: 10px 20px;
-    white-space: normal ;
+    white-space: pre-wrap;
 }
 
-.content codebox code table tr td {
+.content codebox code table tr td:nth-child(2n-1){
     vertical-align: top;
 }
 
@@ -110,6 +126,7 @@ a {
 .content codebox code table tr td:nth-child(2n+0) {
     word-break: break-all;
     padding-left: 8px;
+    line-height: 1;
 }
 
 .content codebox code table tr td:nth-child(2n-1) {
@@ -122,6 +139,82 @@ a {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+    line-height: 1;
+}
+
+.content .table-basic {
+    width: 100%;
+    border: 2px solid #00c896;
+    border-collapse: collapse;
+}
+
+.content .table-basic th {
+    border: 1px solid #00c896;
+    background-color: #00c896;
+    color: white;
+    padding: 5px 0px;
+}
+
+.content .table-basic td {
+    padding: 5px 10px 5px 10px;
+    border-right: 1px solid #00c896;
+}
+
+.content .table-basic tr:nth-child(2n+0) {
+    background-color: #f5faf9;
+}
+
+.content .table-basic tr:nth-child(2n-1) {
+    background-color: #ffffff;
+}
+
+.content .file-box {
+    position: relative;
+    width: 300px;
+    height: 90px;
+    border: 1px solid #eee;
+    box-shadow: 0px 0px 4px #ccc;
+    margin: 0 auto 50px auto;overflow: hidden;
+}
+
+.content .file-box .file-title {
+    text-indent: 20px;
+    line-height: 33px;
+    background-color: #333;
+    color: white;
+ }
+ 
+.content .file-box .file-desc {
+    text-indent: 20px;
+    line-height: 57px;
+}
+
+.content .file-box a {
+    color: black;
+    text-decoration: none;
+}
+
+.content .file-box .file-desc:before {
+    left: 0;
+    top: 30px;;
+    width: 100%;
+    height: 0;
+    border-bottom-left-radius: 45%;
+    border-bottom-right-radius: 45%;
+    background: #eee;
+    z-index: -1;
+    position: absolute;
+    transition: 0.8s ease;
+    content: "";
+}
+
+.content .file-box .file-desc:hover:before {
+    height: 200%;
+}
+
+.content .half {
+    width: 70%;
+    margin-bottom: 30px;
 }
 
 @media screen and (max-width: 1023px) {
@@ -130,16 +223,31 @@ a {
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 720px) {
     .content p {
         word-break: break-all;
     }
 
     .content .grid-image {
         display: block;
+        text-align: center;
     }
 
     .content .grid-image img{
+        display: inline-block;
         max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .content .table-wrap {
+        width: 100%;
+        overflow-x: auto;
+        table-layout : fixed;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        
+        overscroll-behavior: contain;
+        scrollbar-width: thin;
+        scrollbar-color: #555 #eee;
     }
 }
