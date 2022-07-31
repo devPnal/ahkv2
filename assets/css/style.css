@@ -112,7 +112,6 @@ a {
 .content codebox code {
     display: block;
     padding: 10px 20px;
-    white-space: pre-wrap;
 }
 
 .content codebox code table tr td:nth-child(2n-1){
