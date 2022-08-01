@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>프날 오토핫키 v2</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/layout.css">
+        <script> </script>
+    </head>
+    <body>
+        <input class="burger-check" type="checkbox" id="burger-check">
+        <label class="burger-icon" for="burger-check"><span class="burger-sticks"></span></label>
+        <header>
+            <a href="/">프날 오토핫키 강좌 <span style="font-size: smaller;">v2 beta</span> </a>
+        </header>
+        <nav>
+            <ul class="nav-top">
+                <a href="/"><li class="nav-title"><strong>프날 오토핫키 강좌 v2</strong></li></a>
+                <a href="/question"><li>질문하기</li></a>
+            </ul>
+            <ul class="nav-part">
+                <li class="nav-chapter">Part 1. 프로그래밍과 오토핫키 기초</li>
+                <li class="nav-chapter">프로그래밍과 오토핫키</li>
+                <a href="/1"><li>1. 프로그래밍 개요</li></a>
+                <a href="/2"><li>2. 오토핫키 소개</li></a>
+                <a href="/3"><li>3. 오토핫키 프로그래밍 준비하기</li></a>
+                <a href="/4"><li>4. 오토핫키 구문을 분석하는 방법</li></a>
+                <li class="nav-chapter">오토핫키 시작하기</li>
+                <a href="/5"><li>5. 오토핫키 스크립트 만들기</li></a>
+                <a href="/6"><li>6. 문자를 출력하는 MsgBox</li></a>
+                <a href="/7"><li>7. 이스케이프 시퀀스</li></a>
+                <a href="/8"><li>8. 실행파일로 내보내기</li></a>
+                <a href="/9"><li>9. 프로그래밍 문제 (1)</li></a>
+                <li class="nav-chapter">변수와 연산자</li>
+                <a href="/10"><li>10. 변수의 의미</li></a>
+                <a href="/11"><li>11. 내장변수</li></a>
+                <a href="/12"><li>12. 연산자의 의미</li></a>
+                <a href="/13"><li>13. 연산자의 종류</li></a>
+                <a href="/14"><li>14. 프로그래밍 문제 (2)</li></a>
+                <li class="nav-chapter">종합 프로그램 문제</li>
+                <a href="/15"><li>15. 종합 프로그램 문제 for Part 1</li></a>
+            </ul>
+            <ul class="nav-part">
+                <li class="nav-chapter">Part 2. 자동화 프로그래밍</li>
+                <li class="nav-chapter">단축키와 영역 지정</li>
+                <a href="/16"><li>16. 핫키와 핫스트링</li></a>
+                <a href="/17"><li>17. 지연 시간 Sleep</li></a>
+                <a href="/18"><li>18. 스크립트 종료 ExitApp</li></a>
+                <a href="/19"><li>19. 프로그래밍 문제 (3)</li></a>
+                <li class="nav-chapter">반복문과 조건문</li>
+                <a href="/20"><li>20. 반복문 Loop</li></a>
+                <a href="/21"><li>21. 조건문 (상) if ~ else</li></a>
+                <a href="/22"><li>22. 조건문 (하) else if & Switch</li></a>
+                <a href="/23"><li>23. 프로그래밍 문제 (4)</li></a>
+                <li class="nav-chapter">좌표와 마우스</li>
+                <a href="/24"><li>24. 컴퓨터에서의 좌표</li></a>
+                <a href="/25"><li>25. CoordMode</li></a>
+                <a href="/26"><li>26. MouseMove & Click</li></a>
+                <a href="/27"><li>27. MouseGetPos</li></a>
+                <a href="/28"><li>28. 프로그래밍 문제 (5)</li></a>
+                <li class="nav-chapter">좌표와 픽셀</li>
+                <a href="/29"><li>29. ImageSearch</li></a>
+                <a href="/30"><li>30. PixelSearch</li></a>
+                <a href="/31"><li>31. PixelGetColor</li></a>
+                <a href="/32"><li>32. 프로그래밍 문제 (6)</li></a>
+                <li class="nav-chapter">쉬어가는 글</li>
+                <a href="/33"><li>33. 배움에 지친 당신에게</li></a>
+                <a href="/34"><li>34. 지나쳤던 것들</li></a>
+                <li class="nav-chapter">비활성 입력</li>
+                <a href="/35"><li>35. 프로그램의 구성 알기</li></a>
+                <a href="/36"><li>36. 비활성 보내기 ControlSend</li></a>
+                <a href="/37"><li>37. 비활성 클릭 ControlClick</li></a>
+                <a href="/38"><li>38. 비활성 쓰기 ControlSetText</li></a>
+                <a href="/39"><li>39. 프로그래밍 문제 (7)</li></a>
+                <li class="nav-chapter">함수</li>
+                <a href="/40"><li>40. 나만의 함수 만들기</li></a>
+                <a href="/41"><li>41. 가변 매개변수</li></a>
+                <a href="/42"><li>42. Call by reference</li></a>
+                <a href="/43"><li>43. 프로그래밍 문제 (8)</li></a>
+                <li class="nav-chapter">더욱 멋진 코드를 위해</li>
+                <a href="/44"><li>44. 스크립트 파일로 분할하기</li></a>
+                <li class="nav-chapter">종합 프로그램 문제</li>
+                <a href="/45"><li>45. 종합 프로그램 문제 for Part 2</li></a>
+            </ul>
+            <ul class="nav-part">
+                <li class="nav-chapter">Part 3. GUI와 함께 멋진 프로그램을!</li>
+                <li class="nav-chapter">GUI 만나보기</li>
+                <a href="/46"><li>46. GUI란?</li></a>
+                <a href="/47"><li>47. GUI창 만들어보기</li></a>
+                <a href="/48"><li>48. 컨트롤 배치해보기</li></a>
+                <a href="/49"><li>49. 프로그래밍 문제 (9)</li></a>
+                <li class="nav-chapter">이벤트</li>
+                <a href="/50"><li>50. 이벤트란?</li></a>
+                <a href="/51"><li>51. 이벤트 연결을 위한 g레이블</li></a>
+                <a href="/52"><li>52. 컨트롤의 내용을 담고 있는 v레이블</li></a>
+                <a href="/53"><li>53. 프로그래밍 문제 (10)</li></a>
+                <li class="nav-chapter">여러가지 컨트롤</li>
+                <a href="/54"><li>54. 선택형 컨트롤</li></a>
+                <a href="/55"><li>55. 리스트형 컨트롤</li></a>
+                <a href="/56"><li>56. 기타 컨트롤</li></a>
+                <a href="/57"><li>57. 프로그래밍 문제 (11)</li></a>
+                <li class="nav-chapter">GUI 주무르기</li>
+                <a href="/58"><li>58. 내부 컨트롤 조작 GuiControl</li></a>
+                <a href="/59"><li>59. 외부 컨트롤 조작 Control</li></a>
+                <a href="/60"><li>60. GUI에 Option 넣기</li></a>
+                <a href="/61"><li>61. 프로그래밍 문제 (12)</li></a>
+                <li class="nav-chapter">창 조작하기</li>
+                <a href="/62"><li>62. WinMove</li></a>
+                <a href="/63"><li>63. WinGet</li></a>
+                <a href="/64"><li>64. WinSet</li></a>
+                <a href="/65"><li>65. 프로그래밍 문제 (13)</li></a>
+                <li class="nav-chapter">파일 입출력</li>
+                <a href="/66"><li>66. 텍스트 파일 쓰기, 지우기, 읽기</li></a>
+                <a href="/67"><li>67. ini파일로 설정 파일 만들기</li></a>
+                <a href="/68"><li>68. 프로그래밍 문제 (13)</li></a>
+                <li class="nav-chapter">문자열 주무르기</li>
+                <a href="/69"><li>69. 파싱이란?</li></a>
+                <a href="/70"><li>70. SubStr()과 StrLen()</li></a>
+                <a href="/71"><li>71. InStr()</li></a>
+                <a href="/72"><li>72. StrReplace()와 StrSplit()</li></a>
+                <a href="/73"><li>73. 정규표현식</li></a>
+                <a href="/74"><li>74. 프로그래밍 문제 (8)</li></a>
+                <li class="nav-chapter">여러가지 Loop</li>
+                <a href="/75"><li>75. Loop, Parse</li></a>
+                <a href="/76"><li>76. Loop, Files</li></a>
+                <a href="/77"><li>77. 프로그래밍 문제 (8)</li></a>
+                <li class="nav-chapter">종합 프로그램 문제</li>
+                <a href="/78"><li>78. 종합 프로그램 문제 for Part 3</li></a>
+                <li class="nav-chapter">마치는 글</li>
+                <a href="/79"><li>79. 강좌를 마무리하며</li></a>
+            </ul>
+        </nav>
+        <main>
+            <article>
+                <div class="content">
+                    <div class="warn" style="margin-top: 0px;">
+                        <h3>⚠ 이 강좌는 오토핫키 v2를 다룹니다</h3>
+                        <p>지금 보시는 강좌는 널리 알려진 오토핫키(v1.1)의 차세대 버전인 오토핫키 v2를 다루고 있습니다.
+                        <br>
+                        이전 오토핫키 버전과는 많은 부분에서 호환이 되지 않으니,
+                        만약 현시점에서 대중적인 '오토핫키 v1.1'의 강좌를 찾으신다면 프날 오토핫키 강좌(<a href="https://pnal.kr">https://pnal.kr</a>)를 봐주시길 바랍니다.
+                        </p>
+                    </div>
+                    <h1>14. 연산자의 종류 (상)</h1>
+                    <hr>
+                    <p>
+                        오토핫키에 쓰이는 여러 연산자를 배워보겠습니다. 모든 연산자를 배우기엔 아직 이해가 어려운 것도 있으니, 기초 강좌인 여기서는 주요 연산자만 다루도록 하겠습니다.
+                    </p>
+                    <h2>비교 연산자</h2>
+                    <p>
+                        <b>비교 연산자</b>는 두 값을 비교하여 그 결과를 보여주는 연산자입니다.
+                        만약 비교의 값이 옳다면 <code>1</code>, 옳지 않다면 <code>0</code>을 뱉어내죠.
+                        오토핫키에서 <code>1</code>과 <code>0</code>은 각각 내장변수 <code class="code-known-var">true</code>, <code class="code-known-var">false</code>와 대응되기 때문에,
+                        비교의 참과 거짓을 나타내주는 연산자로도 볼 수 있습니다.
+                    </p>
+                    <div class="table-wrap">
+                        <table class="table-basic">
+                            <thead><tr><th>비교 연산자</th><th>설명</th></tr></thead>
+                            <tbody>
+                                <tr><td><code>&lt;</code></td><td>좌측이 우측 값보다 작다(미만)</td></tr>
+                                <tr><td><code>&lt;=</code></td><td>좌측이 우측 값보다 작거나 같다(이하)</td></tr>
+                                <tr><td><code>&gt;</code></td><td>좌측이 우측 값보다 크다(초과)</td></tr>
+                                <tr><td><code>&gt;=</code></td><td>좌측이 우측 값보다 크거나 같다(이상)</td></tr>
+                                <tr><td><code>=</code></td><td>좌측과 우측의 값이 같다</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>
+                        예를 들어서, 한번 2 > 3 이라는 거짓된 조건식을 출력해볼까요?
+                    </p>
+<codebox><code><table>
+<tr><td>1</td><td><span class="code-known-func">MsgBox</span><span class="code-operator">(<span class="code-number">2</span> > <span class="code-number">3</span>)</span></td></tr>
+</table></code></codebox>
+                    <span class="desc">예제 1. 거짓된 식(2가 3보다 크다) 출력</span>
+                    <p>
+                        0이 출력되는 것을 볼 수 있습니다. 왜냐하면 <code>2 > 3</code> 은 거짓된 식이기 때문이죠.
+                        반대로 <code>3 > 2</code>와 같이 참된 비교식을 작성해주면, 그 식은 1의 값을 갖습니다.
+                    </p>
+
+                    <h2>논리 연산자</h2>
+                    <p>
+                        <b>논리 연산자</b>는 두 값의 논리적인 연결 관계를 계산할 수 있는 연산자입니다. 
+                        감이 잘 안오실텐데 아래와 같은 것들이 논리 연산자입니다.
+                    </p>
+
+                    <div class="table-wrap">
+                        <table class="table-basic">
+                            <thead><tr><th>논리 연산자</th><th>설명</th></tr></thead>
+                            <tbody>
+                                <tr><td><code>&amp;&amp;</code></td><td>(두 피연산자의 사이에 써서) 그리고(AND)</td></tr>
+                                <tr><td><code>||</code></td><td>(두 피연산자의 사이에 써서) 또는(OR)</td></tr>
+                                <tr><td><code>!</code></td><td>((피)연산자의 앞에 써서) 부정(NOT)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>
+                        예를 둘어서 <code>a가 10보다 크고, b의 값이 1이다</code>를 표현하면 <code>a > 10 && b = 1</code> 이라고 표현할 수 있습니다.
+                        이 경우 <code>a > 10</code> 이라는 수식과 <code>b = 1</code> 이라는 수식 중 한 개라도 거짓이라면 전체 식은 거짓이 되겠죠.
+                    </p>
+                    <p>
+                        실제 숫자로 예를 들면, <code>1 = 1 && 2 > 3</code>이라는 식에서, <code>1 = 1</code>은 참일지라도 <code>2 > 3</code>은 명백한 거짓이기 때문에(2가 3보다 크진 않죠?) 
+                        <i>"1과 1은 같고, 2는 3보다 크다"</i> 라는 전체 식은 거짓이 되는 셈입니다. MsgBox에 출력해보면 0이 나오겠네요.
+                    </p>
+                    <p>
+                        논리 연산자를 사용해서 <b>'같지 않다'</b>를 만들 수도 있습니다.
+                        '같다'를 뜻하는 비교 연산자 <code>=</code>에 '부정'을 뜻하는 논리 연산자 <code>!</code>를 붙여주어,
+                        <code>!=</code>로 쓸 수 있습니다. 뜻은 '같지 않다'겠네요. 따라서 <code>1 != 1</code>의 결과는 0(거짓)이고, <code>1 != 2</code>의 값은 1(참)입니다.
+                    </p>
+                    <div class="info">
+                        <h3>Tip: 부정(<code>!</code>)의 사용</h3>
+                        <p>
+                            부정을 나타내는 논리 연산자 <code>!</code>는 <b>연산자</b> 뿐만 아니라, 뒤에 오는 <b>값</b>(피연산자)을 반전시키는 역할을 합니다.
+                            값이 참이면 거짓으로, 거짓이라면 참으로 바꾸어주죠.<br><br>
+                            <code>MsgBox</code>로 <code>!0</code>을 출력해볼까요? 0은 오토핫키에서 거짓을 나타내므로, 이의 부정인 참(1)을 출력하겠죠.<br>
+                            여기서 파생되는 테크닉으로, <code>변수 := !변수</code>는 변수의 값이 0이라면 1로, 1이라면 0으로 바꾸는 스위치 역할을 하게됩니다.
+                        </p>
+                    </div>
+                    <div class="info">
+                        <h3>Tip: <code>|</code> 키의 위치</h3>
+                        <p>
+                            OR을 나타내는 논리 연산자 <code>||</code>의 키보드 위치를 모르는 경우가 많습니다.
+                            해당 키는 키보드에 따라 다르지만 대개 <code>Enter</code>키 위, <code>]</code>키 오른쪽에 위치하고 있습니다.
+                            역슬래시(\)를 <code>Shift</code>키와 함께 입력해주면 되죠.
+                        </p>
+                    </div>
+                    <h2>증감 연산자</h2>
+                    <p>
+                        <b>증감 연산자</b>는 정말 쉽습니다. 그저 변수의 값을 1만큼 증가시키거나, 1만큼 감소시키는 역할을 하죠.
+                    </p>
+
+                    <div class="table-wrap">
+                        <table class="table-basic">
+                            <thead><tr><th>증감 연산자</th><th>설명</th></tr></thead>
+                            <tbody>
+                                <tr><td><code>++</code></td><td>변수의 값을 1만큼 증가</td></tr>
+                                <tr><td><code>--</code></td><td>변수의 값을 1만큼 감소</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>
+                        예를 들어서, 이미 <code>10</code>이라는 값이 담긴 변수 <code>var</code>이 있다고 가정할 때,
+                        <code>var--</code>을 해주면 <code>var</code> 변수의 값은 <code>9</code>가 되죠.
+                    </p>
+
+<codebox><code><table>
+<tr><td>1</td><td>var <span class="code-operator">:=</span> <span class="code-number">10</span></td></tr>
+<tr><td>2</td><td>var<span class="code-operator">--</span></td></tr>
+<tr><td>3</td><td><span class="code-known-func">MsgBox</span><span class="code-operator">(</span>var<span class="code-operator">)</span></td></tr>
+</table></code></codebox>
+                    <span class="desc">예제 3. 증감 연산자의 사용</span>
+                    <p>
+                        위의 <code>예제 3</code>은 2번 줄에서 변수 var의 값이 9가 되죠.
+                    </p>
+                    <p>
+                        따져보면, 아래와 같은 세 구문은 모두 같은 역할을 합니다.
+                    </p>
+                    <ul>
+                        <li><code>var := var + 1</code></li>
+                        <li><code>var += 1</code></li>
+                        <li><code>var++</code></li>
+                    </ul>
+                    <p>
+                        증감 연산자는 쉽죠?
+                    </p>
+                    <h2>연습!</h2>
+                    <p>
+                        이번 강에선 특히 논리 연산자 부분이 어려웠을 수도 있습니다. 연산자에 익숙해지기 위해 간단한 논리 문제를 내보겠습니다.
+                        제가 드리는 문장을 논리 연산자와 비교 연산자를 이용한 수식으로 표현해보세요. 여러 어휘를 사용해서 문장을 만들어보았습니다.
+                    </p>
+                    <pre><code>예) a는 2보다 크다.<br>→ <span class="code-known-var">a > 2</span></code></pre>
+                    
+                    <pre class="mini-question"><code>문제 1) a는 3이면서 b는 10이다.</code></pre>
+                    <details class="mini-question-answer">
+                        <summary>정답 펼치기/접기</summary>
+                        <span class="mini-question-answer-text">a = 3 && b = 10</span>
+                    </details>
+                    <pre class="mini-question"><code>문제 2) a가 100이거나 b가 1이다.</code></pre>
+                    <details class="mini-question-answer">
+                        <summary>정답 펼치기/접기</summary>
+                        <span class="mini-question-answer-text">a = 100 || b = 1</span>
+                    </details>
+                    <pre class="mini-question"><code>문제 3) a는 b가 아니고, c는 d보다 크거나 같다.</code></pre>
+                    <details class="mini-question-answer">
+                        <summary>정답 펼치기/접기</summary>
+                        <span class="mini-question-answer-text">a != b && c >= d</span>
+                    </details>
+                    <pre class="mini-question"><code>문제 4) a가 b거나, a는 c와 같거나, a는 1이다.</code></pre>
+                    <details class="mini-question-answer">
+                        <summary>정답 펼치기/접기</summary>
+                        <span class="mini-question-answer-text">a = b || a = c || a = 1</span>
+                    </details>
+                    <pre class="mini-question"><code>문제 5) (a가 1이면서 b는 0)이거나, (c는 1)이다. <span style="color:#888;">(괄호는 소괄호로 표시)</span></code></pre>
+                    <details class="mini-question-answer">
+                        <summary>정답 펼치기/접기</summary>
+                        <span class="mini-question-answer-text">(a = 1 && b = 0) || (c = 1)</span>
+                    </details>
+                    
+                    <div class="info">
+                        <h3>Tip: 전위 표기와 후위 표기</h3>
+                        <p>
+                            타 프로그래밍 언어를 학습하신 분들은 전위표기, 후위표기를 사용해보신 경험이 있을 수 있습니다.
+                            오토핫키 또한 증감연산자의 전위표기를 지원하여, <code>++var</code>의 형태로 사용할 수 있습니다.<br><br>
+                            그러나 기초 강좌에서 전위표기와 후위표기까지 구분지어 설명드리기엔 다소 복잡해지기 때문에, 후위표기 방식인 <code>var++</code>만 강좌합니다.
+                            본인이 전위표기/후위표기에 대한 학습을 타언어에서 하고 오셨다면 써도 좋습니다!<br><br>
+                            만약 전위표기 / 후위표기가 무엇인지 모르시거나 오토핫키로 프로그래밍을 처음 접하신 분들은 그냥 강좌에서 사용한대로 증감연산자를 써주시면 됩니다.
+                            어디까지나 고급(?) 활용법이니까요. 궁금하신 분들은 시간 나실때 '전위표기식'에 대해 검색해주시는 것으로 충분합니다.
+                        </p>
+                    </div>
+                    
+                    <ul class="paging">
+                        <a href="/14"><li>&#xE000; 14. 연산자의 종류 (상)</li></a>
+                        <li>15. 연산자의 종류 (하)</li>
+                        <a href="/16"><li>16. 프로그래밍 문제 (2) &#xE001;</li></a>
+                    </ul>
+                 </div>
+            </article>
+        </main>
+        <hr>
+        <footer>
+            copyright ⓒ 2022 프날(contact@pnal.dev) All Rights Reserved.
+            <br><br>
+            출판 및 기타 문의: contact@pnal.dev<br>
+            강좌 내용에 대한 질문은 메일로 받지 않습니다. 내용 질문은 좌측 메뉴의 '오토핫키 질문하기'를 이용해주세요.
+            <br><br>
+            ※ 사칭에 주의하세요! 저는 메신저, 커뮤니티 등에서 '프날'이라는 닉네임을 사용하지 않습니다.
+            별도로 증명할 수 없이 '내가 프날 사이트를 만들었다'라고 말하는 사람이 있다면 사칭이라고 생각하시면 됩니다.
+            사칭 피해(사기, 불법 프로그램 제작 및 공유)에 주의하세요.
+        </footer>
+    </body>
+</html>
