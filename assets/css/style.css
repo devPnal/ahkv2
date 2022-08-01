@@ -195,7 +195,7 @@ a {
 
 .content .file-box .file-desc:before {
     left: 0;
-    top: 30px;;
+    top: 30px;
     width: 100%;
     height: 0;
     border-bottom-left-radius: 45%;
@@ -215,6 +215,39 @@ a {
     width: 70%;
     margin-bottom: 30px;
 }
+
+.content .mini-question {
+    margin-bottom: 3px;
+}
+
+.content .mini-question-answer {
+    margin: 0 2px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 2px #888;
+    background-color: #667766;
+    color:white;
+}
+
+.content .mini-question-answer summary {
+    padding: 10px 20px;
+}
+
+.content .mini-question-answer summary:hover {
+    background-color: #556655;
+}
+
+.content .mini-question-answer[open] summary {
+    border-bottom: 1px solid #ddd;
+}
+
+.content .mini-question-answer-text {
+    display: block;
+    padding: 10px 20px;
+    background-color: #f8f8f8;
+    color: black;
+
+}
+
 
 @media screen and (max-width: 1023px) {
     .content p {
